@@ -9,7 +9,7 @@ android {
         config {
             keyAlias '88888888'
             keyPassword '88888888'
-            storeFile file('/Users/vincent/Development/project/crash-kategory/junk.jks')
+            storeFile file('junk.jks')
             storePassword '88888888'
         }
     }
