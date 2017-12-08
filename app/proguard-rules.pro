@@ -20,6 +20,13 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
+# https://stackoverflow.com/questions/33547643/how-to-use-kotlin-with-proguard#34159813 -> NOPE
+-dontwarn kotlin.**
+-assumenosideeffects class kotlin.jvm.internal.Intrinsics {
+    static void checkParameterIsNotNull(java.lang.Object, java.lang.String);
+}
+
+# Trying the build to pass -> NOPE
 -keepclassmembers class ** {
    public static *** pure(...);
 }
@@ -27,3 +34,10 @@
    public static *** parse(...);
 }
 -keep class kategory.** { *; }
+
+# https://stackoverflow.com/questions/44161717/proguard-and-kotlin-reflect-kotlin-annotations -> NOPE
+-keep class org.jetbrains.kotlin.** { *; }
+-keep class org.jetbrains.annotations.** { *; }
+-keepclassmembers class ** {
+  @org.jetbrains.annotations.ReadOnly public *;
+}
