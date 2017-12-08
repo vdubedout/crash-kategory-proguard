@@ -7,6 +7,10 @@ apply plugin: 'kotlin-android-extensions'
 android {
     signingConfigs {
         config {
+            keyAlias '88888888'
+            keyPassword '88888888'
+            storeFile file('/Users/vincent/Development/project/crash-kategory/junk.jks')
+            storePassword '88888888'
         }
     }
     compileSdkVersion 26
