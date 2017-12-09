@@ -19,6 +19,9 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+-verbose
+
+
 
 # https://stackoverflow.com/questions/33547643/how-to-use-kotlin-with-proguard#34159813 -> NOPE
 -dontwarn kotlin.**
@@ -27,13 +30,13 @@
 }
 
 # Trying the build to pass -> NOPE
--keepclassmembers class ** {
-   public static *** pure(...);
-}
--keepclassmembers class ** {
-   public static *** parse(...);
-}
--keep class kategory.** { *; }
+#-keepclassmembers class ** {
+#   public static *** pure(...);
+#}
+#-keepclassmembers class ** {
+#   public static *** parse(...);
+#}
+#-keep class kategory.** { *; }
 
 # https://stackoverflow.com/questions/44161717/proguard-and-kotlin-reflect-kotlin-annotations -> NOPE
 -keep class org.jetbrains.kotlin.** { *; }
